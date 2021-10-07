@@ -6,6 +6,8 @@ const ctx = canvas.getContext("2d");
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
+const mediaQuery = window.matchMedia("(max-width: 500px)");
+
 let circleParticleArray = [];
 
 class Circle{
@@ -48,7 +50,11 @@ for(let i=0;i<250;i++){
     y = Math.random() * window.innerHeight ;
     dx = (Math.random() * 2) - 1;
     dy = (Math.random() * 2) - 1;
-    size = Math.random() * 20;
+    if(mediaQuery.matches){
+        size = Math.random() * 10;
+    }else{
+        size = Math.random() * 20;
+    }
     color = "black";
     let particleC = new Circle(x,y,dx,dy,color,size);
     circleParticleArray.push(particleC);
