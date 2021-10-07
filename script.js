@@ -73,3 +73,7 @@ window.addEventListener('resize',function(e){
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
 })
+
+canvas.addEventListener('mousemove',function(e){
+    size +=5;
+})
